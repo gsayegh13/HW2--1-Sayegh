@@ -1,0 +1,75 @@
+# HW2 -1 Sayegh
+import java.util.Scanner;
+
+class test {
+	
+	public static void main (String[] args){
+		
+
+	
+	
+	public boolean isIsomorphic(String s, String t) 
+				{
+			
+		//Asking the user for the two inputs to see if isomorphic
+		System.out.println("Enter your First Input ");
+			Scanner in1 = new Scanner(System.in);		
+		System.out.println("Enter your Second Input ");
+			Scanner in2 = new Scanner(System.in);
+				String input1 = in1.nextLine();
+				String input2 = in2.nextLine();
+		System.out.println("Your inputs are: " + input1 + input2);
+		
+		//if length of inputs are 0 output will be false aka if nothing is input then output is false
+		int stringLength1 = input1.length();
+		if(stringLength1 == 0) {
+		System.out.println("The length of the inputs can not be zero");	
+		}
+		
+		//Initializing string length of 2
+		int stringLength2 = input2.length();
+
+		//make sure length of each input is the same, otherwise return an error
+		if (stringLength1 == stringLength2)
+		{
+		
+			System.out.println("The inputs have the same length");
+		
+			//keep track of the occurrence of the character in each string (26 letter for 26 letters in alphabet)
+			int [] occurenceS = new int [26];
+			int [] occurenceT = new int [26];
+			int label = 1;
+			for(int i = 0; i < input1; i++) 
+			{
+				//integer position of single character in string
+				int charS = s.charAt(i);
+				int charT = t.charAt(i);
+		
+				//if this is the first time character comes up in string it will be labeled ex: abb = 122
+				if (occurenceS[charS] == 0) 
+				{
+				occurenceS[charS] = label;
+				occurenceT[charT] = label;
+				label++;
+		
+				System.out.println("The inputs are isomorphic");
+				}
+				
+			}
+			
+		}
+	
+		
+		
+		else {
+			
+			System.out.println("Error");
+			
+			
+			
+		}
+			
+					}
+				}
+	
+	}
